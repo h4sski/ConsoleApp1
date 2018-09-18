@@ -43,7 +43,8 @@ namespace ConsoleApp1
             //TestABC();
             //new OtherClass();
 
-            new Challange364easy();
+            //new Challange364easy(); // missplelling in the name of file :P
+            new Challenge363Easy();
 
 
             Console.ReadKey();

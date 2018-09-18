@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Challange364easy.cs" />
+    <Compile Include="Challenge363Easy.cs" />
     <Compile Include="OtherClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
