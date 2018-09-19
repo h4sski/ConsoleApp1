@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,29 @@ namespace ConsoleApp1
                 Console.Write(inp + " // ");
                 Console.WriteLine(check(inp));
             }
+
+            /*
+             * BONUS 
+             */
+
+            // reading local file
+            string path = @"E:\#cloud\OneDrive\programingCsharp\testing\ConsoleApp1\ConsoleApp1\enable1.txt";
+            using (StreamReader file = File.OpenText(path))
+            {
+                Console.WriteLine("start of reading file");
+                string line = "";
+                int count = 0;
+                //for (int i=0; i<10; i++)  // check if and how file is reading
+                //{
+                //    line = file.ReadLine();
+                //    Console.WriteLine(line);
+                //}
+                while ((line = file.ReadLine()) != null)
+                {
+                    if (check(line)) count++;
+                }
+                Console.WriteLine("The answer is: "+count);
+            }
         }
 
         // checking method
@@ -38,14 +62,22 @@ namespace ConsoleApp1
         {
             bool result=true;
             if (s.Length < 3) return result;
-            if (s.Contains("ei") && !s.Contains("cei"))
+
+            if (s.Contains("ei") && !s.Contains("cei")
+                ||
+                s.Contains("ie") && s.Contains("cie"))
             {
                 result = false;
-            } else if (s.Contains("cie"))
+            } else if (!s.Contains("ei") || !s.Contains("ie"))
             {
                 result = false;
-                if (s.Contains("ie")) result = true;
             }
+
+            //if (s.Contains("ie"))
+            //{
+            //    result = true;
+            //    if (s.Contains("cie")) result = false;
+            //}
             return result;
         }
     }
